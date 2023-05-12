@@ -1,0 +1,23 @@
+openapi: 3.0.0
+info:
+  description: 'ping-angular-app API'
+  version: '1.0.0'
+  title: 'ping-angular-app API'
+paths:
+  /:
+    get:
+      responses:
+        '200':
+          description: 'dummy API'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                    example: 4
+                  name:
+                    type: string
+                    example: Jessica Smith
