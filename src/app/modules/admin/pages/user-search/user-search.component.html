@@ -1,0 +1,8 @@
+<ng-container *ngrxLet="viewModel$ as vm">
+  <input #inputField />
+  <button (click)="searchClicked(inputField.value)">Search</button>
+  <div>Button click count: {{ vm.count }}</div>
+  <div>Search string: {{ vm.search }}</div>
+  <div>Search results count: {{ vm.resultsCount }}</div>
+  <div>Search results: {{ JSON.stringify(vm.results) }}</div>
+</ng-container>
