@@ -9,34 +9,37 @@ import {
   switchMap,
   mergeMap,
 } from 'rxjs/operators';
-import { UserApiActions } from '../actions/user-api.actions';
-import { UserSearchActions } from '../actions/user-search.actions';
-import { UserService } from '../services/user.service';
+import { EntityApiActions } from '../actions/entity-api.actions';
+import { EntitySearchActions } from '../actions/entity-search.actions';
+import { EntityService } from '../services/entity.service';
 
 @Injectable()
-export class UserServiceSearchEffect {
-  searchUsers$ = createEffect(() =>
+export class EntityServiceSearchEffect {
+  searchEntities$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(UserSearchActions.searchClicked),
+      ofType(EntitySearchActions.searchClicked),
       // use exhaustMap if you want discard actions that are coming in while the server call is still running
       // use switchMap if you want to cancel calls in progress and only want the result of the last action
       // use mergeMap if you want all results (then you may need additional code in the reducer because of
       // the order of the results can be mixed up)
       switchMap((action) =>
-        this.userService.search(action.value).pipe(
-          map((users) =>
-            UserApiActions.usersReceived({
+        this.entityService.search(action.value).pipe(
+          map((entities) =>
+            EntityApiActions.entitiesReceived({
               searchString: action.value,
-              users,
+              entities,
             })
           ),
           catchError((error) =>
-            of(UserApiActions.usersLoadingFailed({ error }))
+            of(EntityApiActions.entitiesLoadingFailed({ error }))
           )
         )
       )
     )
   );
 
-  constructor(private actions$: Actions, private userService: UserService) {}
+  constructor(
+    private actions$: Actions,
+    private entityService: EntityService
+  ) {}
 }

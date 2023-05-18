@@ -1,25 +1,25 @@
 import { createSelector } from '@ngrx/store';
-import { selectAdminFeature } from '../../admin.selectors';
-import { UserSearchViewModel } from './user-search.viewmodel';
+import { selectFeature } from '../../feature.selectors';
+import { EntitySearchViewModel } from './entity-search.viewmodel';
 
-export const selectUserSearch = createSelector(
-  selectAdminFeature,
-  (feature) => feature.userSearch
+export const selectEntitySearch = createSelector(
+  selectFeature,
+  (feature) => feature.entitySearch
 );
 
 export const selectButtonClickCount = createSelector(
-  selectUserSearch,
-  (userSearch) => userSearch.buttonClickCount
+  selectEntitySearch,
+  (entitySearch) => entitySearch.buttonClickCount
 );
 
 export const selectSearchString = createSelector(
-  selectUserSearch,
-  (userSearch) => userSearch.searchString
+  selectEntitySearch,
+  (entitySearch) => entitySearch.searchString
 );
 
 export const selectSearchResults = createSelector(
-  selectUserSearch,
-  (userSearch) => userSearch.searchResults
+  selectEntitySearch,
+  (entitySearch) => entitySearch.searchResults
 );
 
 export const selectSearchResultsCount = createSelector(
@@ -27,7 +27,7 @@ export const selectSearchResultsCount = createSelector(
   (searchResults) => searchResults.length
 );
 
-export const selectUserSearchViewModel = createSelector(
+export const selectEntitySearchViewModel = createSelector(
   selectButtonClickCount,
   selectSearchString,
   selectSearchResults,
@@ -37,7 +37,7 @@ export const selectUserSearchViewModel = createSelector(
     searchString,
     searchResults,
     searchResultsCount
-  ): UserSearchViewModel => ({
+  ): EntitySearchViewModel => ({
     count: buttonClickCount,
     search: searchString,
     results: searchResults,

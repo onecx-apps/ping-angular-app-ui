@@ -1,7 +1,7 @@
 import { createActionGroup, props } from '@ngrx/store';
 
-export const UserSearchActions = createActionGroup({
-  source: 'UserSearch',
+export const EntitySearchActions = createActionGroup({
+  source: 'EntitySearch',
   events: {
     'Search clicked': props<{ value: string }>(),
   },

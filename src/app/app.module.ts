@@ -20,13 +20,12 @@ import { Observable } from 'rxjs';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MessageService } from 'primeng/api';
 import { KeycloakAuthModule } from '@onecx/keycloak-auth';
-import { RouteReuseStrategy } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './app.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LetModule } from '@ngrx/component';
 import { CommonModule } from '@angular/common';
-import { CoreModule } from './modules/core/core.module';
+import { EntityModule } from './modules/domain/entity.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, `./assets/i18n/`, '.json');
@@ -63,7 +62,7 @@ const authModule = KeycloakAuthModule;
       trace: false, //  If set to true, will include stack trace for every dispatched action, so you can see it in trace tab jumping directly to that part of code
       traceLimit: 75, // maximum stack trace frames to be stored (in case trace option was provided as true)
     }),
-    CoreModule,
+    EntityModule,
     HttpClientModule,
     PortalCoreModule.forRoot('ping-angular-app'),
     TranslateModule.forRoot({

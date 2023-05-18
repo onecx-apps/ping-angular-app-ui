@@ -4,14 +4,16 @@ import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
-    path: 'admin',
+    path: 'feature',
     data: { shouldReuse: true },
     loadChildren: () =>
-      import('./modules/admin/admin.module').then((mod) => mod.AdminModule),
+      import('./modules/feature/feature.module').then(
+        (mod) => mod.FeatureModule
+      ),
   },
   {
     path: '',
-    redirectTo: 'admin',
+    redirectTo: 'feature',
     pathMatch: 'full',
   },
 ];
