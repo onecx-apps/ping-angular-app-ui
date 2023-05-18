@@ -15,8 +15,10 @@ export class EntitySearchComponent {
   constructor(private store: Store) {}
 
   searchClicked(inputValue: string) {
-    this.store.dispatch(
-      EntitySearchActions.searchClicked({ value: inputValue })
-    );
+    if (inputValue) {
+      this.store.dispatch(
+        EntitySearchActions.searchClicked({ value: inputValue })
+      );
+    }
   }
 }
