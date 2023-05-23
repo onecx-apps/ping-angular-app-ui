@@ -16,13 +16,10 @@ module.exports = function (config) {
     client: {
       clearContext: false, // leave Jasmine Spec Runner output visible in browser
     },
-    jasmineHtmlReporter: {
-      suppressAll: true, // removes the duplicated traces
-    },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/library-ui'),
+      dir: require('path').join(__dirname, './coverage'),
       subdir: '.',
-      reporters: [{ type: 'html' }, { type: 'text-summary' }],
+      reporters: [{ type: 'lcov' }],
     },
     reporters: ['progress', 'kjhtml', 'sonarqube'],
     port: 9876,
