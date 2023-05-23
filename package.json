@@ -50,7 +50,7 @@
     "@angular-eslint/builder": "^15.2.1",
     "@angular-eslint/eslint-plugin": "^15.2.1",
     "@angular-eslint/eslint-plugin-template": "^15.2.1",
-    "@angular-eslint/schematics": "^15.2.1",
+    "@angular-eslint/schematics": "^16.0.2",
     "@angular-eslint/template-parser": "^15.2.1",
     "@ngrx/schematics": "^15.3.0",
     "@openapitools/openapi-generator-cli": "^2.5.2",
