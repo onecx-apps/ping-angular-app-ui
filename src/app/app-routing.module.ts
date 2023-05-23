@@ -5,7 +5,6 @@ import { TranslateModule } from '@ngx-translate/core';
 const routes: Routes = [
   {
     path: 'feature',
-    data: { shouldReuse: true },
     loadChildren: () =>
       import('./modules/feature/feature.module').then(
         (mod) => mod.FeatureModule
