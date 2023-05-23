@@ -1,4 +1,4 @@
-FROM harbor.1000kit.org/1000kit/spa-base:v1
+FROM ghcr.io/onecx/docker-spa-base:v1
 
 # Copy applicaiton build
 COPY nginx/locations.conf $DIR_LOCATION/locations.conf
