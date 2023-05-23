@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "{{ .Release.Name }}-kc-config"
+  annotations:
+    tkit.kc.cli/type: client
+    tkit.kc.cli/target-realm: master
+data:
+  client: |-
+    {
+        "clientId": "{{ .Release.Name }}",
+        "enabled": true,
+        "description": "Keycloack client for {{ .Release.Name }}",
+        "redirectUris": [
+            "*"
+        ],
+        "webOrigins": [
+            "*"
+        ],
+        "publicClient": true,
+        "protocol": "openid-connect"
+    }

@@ -1,0 +1,6 @@
+app:
+  image:
+    repository: "1000kit/${project.name}"
+    tag: ${project.version}
+  routing:
+    enabled: true

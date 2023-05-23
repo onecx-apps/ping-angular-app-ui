@@ -1,0 +1,11 @@
+{
+  "GENERAL": {
+    "YES": "Ja",
+    "NO": "Nein",
+    "ERRORS": {
+      "EMPTY_REQUIRED_FIELD_ERROR": "Das erforderliche Feld wurde nicht ausgefüllt.",
+      "EMAIL_INVALID_ERROR": "Bitte geben Sie eine korrekte Email an"
+    },
+    "CLOSE": "Schließen"
+  }
+}

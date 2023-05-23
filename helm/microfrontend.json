@@ -1,0 +1,21 @@
+{
+  "id": "PING_ANGULAR_APP_MFE",
+  {{- if .Values.app.routing.hostName }}
+  "remoteEntry": "https://{{ .Values.app.routing.hostName }}{{ .Values.app.routing.path }}remoteEntry.js",
+  {{- else if .Values.global.hostName }}
+  "remoteEntry": "https://{{ .Values.global.hostName }}{{ .Values.app.routing.path }}remoteEntry.js",
+  {{- end }}
+  "remoteName": "PingAngularAppRemoteModule",
+  {{- if .Values.app.routing.hostName }}
+  "remoteBaseUrl": "https://{{ .Values.app.routing.hostName }}{{ .Values.app.routing.path }}",
+  {{- else if .Values.global.hostName }}
+  "remoteBaseUrl": "https://{{ .Values.global.hostName }}{{ .Values.app.routing.path }}",
+  {{- end }}
+  "exposedModule": "./PingAngularAppRemoteModule",
+  "displayName": "PingAngularAppRemoteModule",
+  "moduleType": "ANGULAR",
+  "wcTagName": "UPMF",
+  "appVersion": "{{ .Chart.Version }}",
+  "note": "Ping Angular UI MFE definition created by helm + mf operator",
+  "contact": "onecx@1000kit.org"
+}
