@@ -1,4 +1,4 @@
-import { Entity } from 'src/app/modules/domain/models/entity';
+import { Entity } from 'src/app/entity/models/entity';
 
 export interface EntitySearchViewModel {
   count: number;

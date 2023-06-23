@@ -1,8 +1,8 @@
 import { state } from '@angular/animations';
 import { createReducer, on } from '@ngrx/store';
-import { EntitySearchActions } from '../../../domain/actions/entity-search.actions';
+import { EntitySearchActions } from '../../../entity/actions/entity-search.actions';
 import { EntitySearchState } from './entity-search.state';
-import { EntityApiActions } from 'src/app/modules/domain/actions/entity-api.actions';
+import { EntityApiActions } from 'src/app/entity/actions/entity-api.actions';
 
 const initialState: EntitySearchState = {
   buttonClickCount: 0,

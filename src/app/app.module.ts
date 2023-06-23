@@ -14,7 +14,7 @@ import {
   TranslateModule,
   TranslateService,
 } from '@ngx-translate/core';
-import { BASE_PATH } from './generated';
+import { BASE_PATH } from './core/generated';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Observable } from 'rxjs';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -25,7 +25,7 @@ import { reducers, metaReducers } from './app.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LetModule } from '@ngrx/component';
 import { CommonModule } from '@angular/common';
-import { EntityModule } from './modules/domain/entity.module';
+import { EntityModule } from './entity/entity.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, `./assets/i18n/`, '.json');

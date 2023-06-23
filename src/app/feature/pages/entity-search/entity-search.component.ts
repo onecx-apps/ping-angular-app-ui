@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { EntitySearchActions } from '../../../domain/actions/entity-search.actions';
+import { EntitySearchActions } from '../../../entity/actions/entity-search.actions';
 import { selectEntitySearchViewModel } from './entity-search.selectors';
 
 @Component({
