@@ -16,10 +16,7 @@ export const entitiesSearchReducer = createReducer(
   ),
   on(
     EntityApiActions.entitiesReceived,
-    (
-      state: EntitySearchState,
-      { entities, searchString }
-    ): EntitySearchState => ({
+    (state: EntitySearchState, { entities }): EntitySearchState => ({
       ...state,
       searchResults: entities,
     })

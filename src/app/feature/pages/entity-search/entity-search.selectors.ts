@@ -11,7 +11,7 @@ export const pageSelectors = createChildSelectors(
 
 export const selectSearchResultsCount = createSelector(
   pageSelectors.selectSearchResults,
-  (searchResults) => searchResults.length
+  (searchResults) => searchResults?.length || 0
 );
 
 export const selectEntitySearchViewModel = createSelector(

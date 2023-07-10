@@ -19,10 +19,9 @@ export class EntitySearchEffects {
       // use concatMap if you want all results. The calls will run one after an other
       switchMap((action) =>
         this.entityService.search(action.query).pipe(
-          map((entities) =>
+          map(({ entities }) =>
             EntityApiActions.entitiesReceived({
-              searchString: action.query,
-              entities,
+              entities: entities || [],
             })
           ),
           catchError((error) =>
