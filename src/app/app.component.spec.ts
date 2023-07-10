@@ -1,8 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { AUTH_SERVICE, PortalCoreModule } from '@onecx/portal-integration-angular';
-import { KeycloakAuthModule } from '@onecx/keycloak-auth';
+import {
+  AUTH_SERVICE,
+  PortalCoreModule,
+} from '@onecx/portal-integration-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthServiceMock } from './shared/auth.service.mock';
 
