@@ -25,7 +25,7 @@ import { reducers, metaReducers } from './app.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LetModule } from '@ngrx/component';
 import { CommonModule } from '@angular/common';
-import { EntityModule } from './entity/entity.module';
+import { EffectsModule } from '@ngrx/effects';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, `./assets/i18n/`, '.json');
@@ -62,7 +62,7 @@ const authModule = KeycloakAuthModule;
       trace: false, //  If set to true, will include stack trace for every dispatched action, so you can see it in trace tab jumping directly to that part of code
       traceLimit: 75, // maximum stack trace frames to be stored (in case trace option was provided as true)
     }),
-    EntityModule,
+    EffectsModule.forRoot([]),
     HttpClientModule,
     PortalCoreModule.forRoot('ping-angular-app'),
     TranslateModule.forRoot({

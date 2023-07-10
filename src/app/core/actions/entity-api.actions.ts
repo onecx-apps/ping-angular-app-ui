@@ -1,5 +1,5 @@
 import { createActionGroup, props } from '@ngrx/store';
-import { Entity } from '../models/entity';
+import { Entity } from '../generated';
 
 export const EntityApiActions = createActionGroup({
   source: 'EntityApi',

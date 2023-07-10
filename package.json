@@ -10,7 +10,7 @@
     "test": "ng test",
     "test:ci": "ng test --watch=false --browsers=ChromeHeadless --code-coverage",
     "lint": "ng lint",
-    "apigen": "openapi-generator-cli generate -i src/assets/swagger/your-bff-api.yaml -c apigen.yaml -o src/app/generated -g typescript-angular --type-mappings AnyType=object"
+    "apigen": "openapi-generator-cli generate -i src/assets/swagger/your-bff-api.yaml -c apigen.yaml -o src/app/core/generated -g typescript-angular --type-mappings AnyType=object"
   },
   "private": true,
   "dependencies": {
