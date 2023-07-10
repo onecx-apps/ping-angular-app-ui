@@ -1,5 +1,4 @@
-import { Entity } from "src/app/core/generated";
-
+import { Entity } from 'src/app/core/generated';
 
 export interface EntitySearchState {
   buttonClickCount: number;

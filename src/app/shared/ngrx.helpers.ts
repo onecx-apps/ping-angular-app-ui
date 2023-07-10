@@ -1,7 +1,7 @@
 /*
-*    This file should be moved to a shared lib
-*/
-import { MemoizedSelector, createSelector } from "@ngrx/store";
+ *    This file should be moved to a shared lib
+ */
+import { MemoizedSelector, createSelector } from '@ngrx/store';
 
 type Primitive = string | number | bigint | boolean | null | undefined;
 

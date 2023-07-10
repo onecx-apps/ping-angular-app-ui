@@ -10,6 +10,7 @@ export class EntitySearchEffects {
   searchEntities$ = createEffect(() =>
     this.actions$.pipe(
       ofType(EntitySearchActions.searchClicked),
+      // see comment in EntitySearchComponent
       filter((action) => !!action.value),
       // use exhaustMap if you want discard actions that are coming in while the server call is still running
       // use switchMap if you want to cancel calls in progress and only want the result of the last action
