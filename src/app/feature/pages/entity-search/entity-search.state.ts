@@ -5,3 +5,9 @@ export interface EntitySearchState {
   searchString: string;
   searchResults: Entity[];
 }
+
+export const initialState: EntitySearchState = {
+  buttonClickCount: 0,
+  searchString: '',
+  searchResults: [],
+};

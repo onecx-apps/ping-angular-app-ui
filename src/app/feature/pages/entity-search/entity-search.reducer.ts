@@ -1,13 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { EntitySearchActions } from './entity-search.actions';
-import { EntitySearchState } from './entity-search.state';
+import { EntitySearchState, initialState } from './entity-search.state';
 import { EntityApiActions } from 'src/app/core/actions/entity-api.actions';
-
-export const initialState: EntitySearchState = {
-  buttonClickCount: 0,
-  searchString: '',
-  searchResults: [],
-};
 
 export const entitiesSearchReducer = createReducer(
   initialState,
