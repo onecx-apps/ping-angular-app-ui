@@ -22,7 +22,7 @@ export class EntitySearchComponent {
     //conditionally. The condition will be checked in the effect that is
     //calling the service.
     this.store.dispatch(
-      EntitySearchActions.searchClicked({ value: inputValue })
+      EntitySearchActions.searchClicked({ query: inputValue })
     );
   }
 }

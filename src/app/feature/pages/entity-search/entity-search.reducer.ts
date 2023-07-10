@@ -7,9 +7,9 @@ export const entitiesSearchReducer = createReducer(
   initialState,
   on(
     EntitySearchActions.searchClicked,
-    (state: EntitySearchState, { value }): EntitySearchState => ({
+    (state: EntitySearchState, { query }): EntitySearchState => ({
       ...state,
-      searchString: value,
+      searchString: query,
       buttonClickCount: state.buttonClickCount + 1,
       searchResults: [],
     })

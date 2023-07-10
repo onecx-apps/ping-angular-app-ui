@@ -11,17 +11,17 @@ export class EntitySearchEffects {
     this.actions$.pipe(
       ofType(EntitySearchActions.searchClicked),
       // see comment in EntitySearchComponent
-      filter((action) => !!action.value),
+      filter((action) => !!action.query),
       // use exhaustMap if you want discard actions that are coming in while the server call is still running
       // use switchMap if you want to cancel calls in progress and only want the result of the last action
-      // use mergeMap if you want all results. The calls will run in parallel (then you may need additional code in the reducer because of
-      //    the order of the results can be mixed up)
+      // use mergeMap if you want all results. The calls will run in parallel (then you may need additional
+      //    code in the reducer because of the order of the results can be mixed up)
       // use concatMap if you want all results. The calls will run one after an other
       switchMap((action) =>
-        this.entityService.search(action.value).pipe(
+        this.entityService.search(action.query).pipe(
           map((entities) =>
             EntityApiActions.entitiesReceived({
-              searchString: action.value,
+              searchString: action.query,
               entities,
             })
           ),
