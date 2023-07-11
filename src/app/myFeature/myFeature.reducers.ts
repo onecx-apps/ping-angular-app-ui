@@ -1,10 +1,10 @@
 import { combineReducers, createFeature } from '@ngrx/store';
-import { FeatureState } from './feature.state';
+import { MyFeatureState } from './myFeature.state';
 import { entitiesSearchReducer } from './pages/entity-search/entity-search.reducer';
 
-export const featureFeature = createFeature({
-  name: 'feature',
-  reducer: combineReducers<FeatureState>({
+export const myFeatureFeature = createFeature({
+  name: 'myFeature',
+  reducer: combineReducers<MyFeatureState>({
     entitySearch: entitiesSearchReducer,
   }),
 });
