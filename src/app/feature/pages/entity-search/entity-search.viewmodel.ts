@@ -1,4 +1,4 @@
-import { Entity } from 'src/app/entity/models/entity';
+import { Entity } from 'src/app/core/generated';
 
 export interface EntitySearchViewModel {
   count: number;

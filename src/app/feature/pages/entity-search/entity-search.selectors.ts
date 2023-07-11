@@ -1,36 +1,23 @@
 import { createSelector } from '@ngrx/store';
-import { selectFeature } from '../../feature.selectors';
 import { EntitySearchViewModel } from './entity-search.viewmodel';
+import { featureFeature } from '../../feature.reducers';
+import { createChildSelectors } from 'src/app/shared/ngrx.helpers';
+import { initialState } from './entity-search.state';
 
-export const selectEntitySearch = createSelector(
-  selectFeature,
-  (feature) => feature.entitySearch
-);
-
-export const selectButtonClickCount = createSelector(
-  selectEntitySearch,
-  (entitySearch) => entitySearch.buttonClickCount
-);
-
-export const selectSearchString = createSelector(
-  selectEntitySearch,
-  (entitySearch) => entitySearch.searchString
-);
-
-export const selectSearchResults = createSelector(
-  selectEntitySearch,
-  (entitySearch) => entitySearch.searchResults
+export const pageSelectors = createChildSelectors(
+  featureFeature.selectEntitySearch,
+  initialState
 );
 
 export const selectSearchResultsCount = createSelector(
-  selectSearchResults,
-  (searchResults) => searchResults.length
+  pageSelectors.selectSearchResults,
+  (searchResults) => searchResults?.length || 0
 );
 
 export const selectEntitySearchViewModel = createSelector(
-  selectButtonClickCount,
-  selectSearchString,
-  selectSearchResults,
+  pageSelectors.selectButtonClickCount,
+  pageSelectors.selectSearchString,
+  pageSelectors.selectSearchResults,
   selectSearchResultsCount,
   (
     buttonClickCount,

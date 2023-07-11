@@ -5,9 +5,19 @@ const bypassFn = function (req, res, proxyOptions) {
     res.setHeader('Access-Control-Allow-Methods', '*');
     res.setHeader('Access-Control-Allow-Headers', '*');
     return res.send('');
-  } else {
-    return null;
+  } else if (req.method === 'GET') {
+    if (req._parsedUrl.pathname.endsWith('/entity/search')) {
+      let entities = [];
+      let totalElements = Math.ceil(30 / req.query.nameFilter.length)
+      for (let i = 0; i < Math.min(req.query.pageSize, totalElements); i++) {
+        entities.push({ name: req.query.nameFilter + i });
+      }
+
+      res.end(JSON.stringify({ totalElements, entities }));
+      return true;
+    }
   }
+  return null;
 };
 
 const PROXY_CONFIG = {

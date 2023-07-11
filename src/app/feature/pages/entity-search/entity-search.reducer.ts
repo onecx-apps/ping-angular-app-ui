@@ -1,32 +1,22 @@
-import { state } from '@angular/animations';
 import { createReducer, on } from '@ngrx/store';
-import { EntitySearchActions } from '../../../entity/actions/entity-search.actions';
-import { EntitySearchState } from './entity-search.state';
-import { EntityApiActions } from 'src/app/entity/actions/entity-api.actions';
-
-const initialState: EntitySearchState = {
-  buttonClickCount: 0,
-  searchString: '',
-  searchResults: [],
-};
+import { EntitySearchActions } from './entity-search.actions';
+import { EntitySearchState, initialState } from './entity-search.state';
+import { EntityApiActions } from 'src/app/core/actions/entity-api.actions';
 
 export const entitiesSearchReducer = createReducer(
   initialState,
   on(
     EntitySearchActions.searchClicked,
-    (state: EntitySearchState, { value }): EntitySearchState => ({
+    (state: EntitySearchState, { query }): EntitySearchState => ({
       ...state,
-      searchString: value,
+      searchString: query,
       buttonClickCount: state.buttonClickCount + 1,
       searchResults: [],
     })
   ),
   on(
     EntityApiActions.entitiesReceived,
-    (
-      state: EntitySearchState,
-      { entities, searchString }
-    ): EntitySearchState => ({
+    (state: EntitySearchState, { entities }): EntitySearchState => ({
       ...state,
       searchResults: entities,
     })

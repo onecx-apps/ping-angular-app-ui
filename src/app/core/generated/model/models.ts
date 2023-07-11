@@ -1,1 +1,2 @@
-export * from './get200Response';
+export * from './entity';
+export * from './searchEntityResponse';
