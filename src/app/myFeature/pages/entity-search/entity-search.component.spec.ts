@@ -6,7 +6,7 @@ import { EntitySearchComponent } from './entity-search.component';
 import { EntitySearchActions } from './entity-search.actions';
 import { By } from '@angular/platform-browser';
 import { LetModule } from '@ngrx/component';
-import { featureFeature } from '../../myFeature.reducers';
+import { myFeatureFeature } from '../../myFeature.reducers';
 
 describe('EntitySearchComponent', () => {
   let component: EntitySearchComponent;
@@ -20,7 +20,7 @@ describe('EntitySearchComponent', () => {
         LetModule,
         TranslateModule.forRoot(),
         StoreModule.forRoot({}),
-        StoreModule.forFeature(featureFeature),
+        StoreModule.forFeature(myFeatureFeature),
       ],
       declarations: [EntitySearchComponent],
     }).compileComponents();
