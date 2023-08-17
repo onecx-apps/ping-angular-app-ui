@@ -6,7 +6,7 @@ import {
   PortalCoreModule,
 } from '@onecx/portal-integration-angular';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthServiceMock } from './shared/auth.service.mock';
+import { AuthServiceMock } from './shared/test/auth.service.mock';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

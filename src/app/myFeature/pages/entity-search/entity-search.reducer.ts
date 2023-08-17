@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { EntitySearchActions } from './entity-search.actions';
 import { EntitySearchState, initialState } from './entity-search.state';
-import { EntityApiActions } from 'src/app/core/actions/entity-api.actions';
+import { EntityApiActions } from 'src/app/shared/actions/entity-api.actions';
 
 export const entitiesSearchReducer = createReducer(
   initialState,

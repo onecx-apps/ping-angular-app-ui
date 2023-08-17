@@ -1,15 +1,14 @@
 import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { TestScheduler } from 'rxjs/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { provideMockStore } from '@ngrx/store/testing';
 import { cold, hot } from 'jasmine-marbles';
 import { EntitySearchEffects } from './entity-search.effects';
-import { SearchEntityResponse } from 'src/app/core/generated';
+import { SearchEntityResponse } from 'src/app/shared/generated';
 import { TestBed } from '@angular/core/testing';
-import { EntityService } from 'src/app/core/service/entity.service';
+import { EntityService } from 'src/app/shared/services/entity.service';
 import { EntitySearchActions } from './entity-search.actions';
-import { EntityApiActions } from 'src/app/core/actions/entity-api.actions';
+import { EntityApiActions } from 'src/app/shared/actions/entity-api.actions';
 
 describe('EntitySearchEffects:', () => {
   let actions$ = new Observable<Action>();
