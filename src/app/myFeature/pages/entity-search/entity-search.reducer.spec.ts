@@ -1,4 +1,4 @@
-import { EntityApiActions } from 'src/app/core/actions/entity-api.actions';
+import { EntityApiActions } from 'src/app/shared/actions/entity-api.actions';
 import { EntitySearchActions } from './entity-search.actions';
 import { entitiesSearchReducer } from './entity-search.reducer';
 import { EntitySearchState, initialState } from './entity-search.state';
