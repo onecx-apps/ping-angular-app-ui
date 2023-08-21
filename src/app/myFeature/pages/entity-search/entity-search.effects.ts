@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of, filter, switchMap, map, catchError } from 'rxjs';
 import { EntitySearchActions } from './entity-search.actions';
-import { EntityService } from '../../../core/service/entity.service';
-import { EntityApiActions } from 'src/app/core/actions/entity-api.actions';
+import { EntityService } from '../../../shared/services/entity.service';
+import { EntityApiActions } from 'src/app/shared/actions/entity-api.actions';
 
 @Injectable()
 export class EntitySearchEffects {

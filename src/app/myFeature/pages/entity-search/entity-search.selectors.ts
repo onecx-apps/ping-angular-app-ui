@@ -1,7 +1,7 @@
 import { createSelector } from '@ngrx/store';
 import { EntitySearchViewModel } from './entity-search.viewmodel';
 import { myFeatureFeature } from '../../myFeature.reducers';
-import { createChildSelectors } from 'src/app/shared/ngrx.helpers';
+import { createChildSelectors } from 'src/app/shared/utils/ngrx.helpers';
 import { initialState } from './entity-search.state';
 
 export const pageSelectors = createChildSelectors(

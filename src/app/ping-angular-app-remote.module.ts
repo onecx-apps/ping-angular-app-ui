@@ -3,13 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { NgModule, isDevMode } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { BASE_PATH } from './core/generated';
+import { BASE_PATH } from './shared/generated';
 import {
   createTranslateLoader,
   MFE_INFO,
   PortalCoreModule,
 } from '@onecx/portal-integration-angular';
-import { basePathProvider } from './shared/utils';
+import { basePathProvider } from './shared/utils/mfe.utils';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers, metaReducers } from './app.reducers';

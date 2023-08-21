@@ -8,7 +8,7 @@ import { EntitySearchComponent } from './pages/entity-search/entity-search.compo
 import { myFeatureFeature } from './myFeature.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { EntitySearchEffects } from './pages/entity-search/entity-search.effects';
-import { CoreModule } from '../core/core.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [EntitySearchComponent],
@@ -18,7 +18,7 @@ import { CoreModule } from '../core/core.module';
     RouterModule.forChild(routes),
     StoreModule.forFeature(myFeatureFeature),
     EffectsModule.forFeature([EntitySearchEffects]),
-    CoreModule,
+    SharedModule,
   ],
 })
 export class MyFeatureModule {}
